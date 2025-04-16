@@ -24,6 +24,7 @@ Used suggested approach, modular architecture, used a simple array to simulate p
 
 
 ## Available commands
+- install dependencies: "npm i"
 - Run in develop mode: "npm run dev"
 - Build & start: "npm run build" & "npm run start"
 - Test: "npm run test". Note: When testing the GET /books route, ensure the server is running first.
