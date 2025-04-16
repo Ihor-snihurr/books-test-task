@@ -16,15 +16,11 @@ import {
 
 const router = Router();
 
-router.get("/", loggerMiddleware, validateBooksGetQuery, getBooks);
-router.post("/", loggerMiddleware, validateBookCreate, createNewBook);
-router.put(
-  "/:id",
-  loggerMiddleware,
-  validateBookUpdate,
-  validateBooksUpdateQuery,
-  updateBook
-);
-router.delete("/:id", loggerMiddleware, validateBooksDeleteQuery, deleteBook);
+router.use(loggerMiddleware);
+
+router.get("/", validateBooksGetQuery, getBooks);
+router.post("/", validateBookCreate, createNewBook);
+router.put("/:id", validateBookUpdate, validateBooksUpdateQuery, updateBook);
+router.delete("/:id", validateBooksDeleteQuery, deleteBook);
 
 export default router;
